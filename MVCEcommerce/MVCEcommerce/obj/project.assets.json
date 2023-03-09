@@ -8,19 +8,19 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\virro\\.nuget\\packages\\": {}
+    "C:\\Users\\Admin\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\virro\\Documents\\GitHub\\Ecommerce-Sharp\\MVCEcommerce\\MVCEcommerce\\MVCEcommerce.csproj",
+      "projectUniqueName": "D:\\Ecommerce-Sharp\\MVCEcommerce\\MVCEcommerce\\MVCEcommerce.csproj",
       "projectName": "MVCEcommerce",
-      "projectPath": "C:\\Users\\virro\\Documents\\GitHub\\Ecommerce-Sharp\\MVCEcommerce\\MVCEcommerce\\MVCEcommerce.csproj",
-      "packagesPath": "C:\\Users\\virro\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\virro\\Documents\\GitHub\\Ecommerce-Sharp\\MVCEcommerce\\MVCEcommerce\\obj\\",
+      "projectPath": "D:\\Ecommerce-Sharp\\MVCEcommerce\\MVCEcommerce\\MVCEcommerce.csproj",
+      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+      "outputPath": "D:\\Ecommerce-Sharp\\MVCEcommerce\\MVCEcommerce\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\virro\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
