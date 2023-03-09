@@ -1,0 +1,55 @@
+﻿@model List<MVCEcommerce.Models.ProductViewModel>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@{
+	ViewData["Title"] = "Index";
+}
+<h1>Hello</h1>
+<style>
+	table {
+		border-collapse: collapse;
+		width: 100%;
+	}
+
+	th, td {
+		padding: 8px;
+		text-align: left;
+		border-bottom: 1px solid #ddd;
+	}
+
+	tr:hover {
+		background-color: yellow
+	}
+
+	;
+</style>
+
+<form>
+	<table class="table table-responsive table-hover">
+		<thead>
+			<tr class="table-active">
+				<th>Product ID</th>
+				<th>Product Name</th>
+				<th>Product Description</th>
+				<th>Product Cost</th>
+				<th>Product Image</th>
+				<th>Product Category</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach(var pr in Model)
+			{
+				<tr>
+					<td>@pr.productID</td>
+					<td>@pr.productName</td>
+					<td>@pr.productDescription</td>
+					<td>@pr.productCost</td>
+					<td>@pr.productImage</td>
+					
+				</tr>
+			}
+		</tbody>
+	</table>
+</form>
