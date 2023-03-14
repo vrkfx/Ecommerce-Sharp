@@ -2,14 +2,22 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace MVCEcommerce.Models
 {
     public partial class Product
     {
+
         public int productID { get; set; }
+
+        [DisplayName("Product Name")]
         public string productName { get; set; }
+
+        [DisplayName("Cost")]
         public decimal productCost { get; set; }
+
+        [DisplayName("Description")]
         public string productDescription { get; set; }
         public string productImage { get; set; }
         public int categoryID { get; set; }

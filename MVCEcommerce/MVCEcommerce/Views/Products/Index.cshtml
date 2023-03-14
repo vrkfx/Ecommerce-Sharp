@@ -9,7 +9,24 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table">
+@foreach (var item in Model) {
+<div class="card col" style="width: 18rem;">
+        <img class="card-img-top" src=@Html.DisplayFor(modelItem => item.productImage) alt="Card image cap">
+    <div class="card-body">
+            <h5> @Html.DisplayFor(modelItem => item.productName)</h5>
+            <h6> @Html.DisplayFor(modelItem => item.productCost)</h6>
+            <p> @Html.DisplayFor(modelItem => item.productDescription)</p>
+
+           
+    </div>
+    <div>
+            <a asp-action="Edit" asp-route-id="@item.productID">Edit</a> |
+            <a asp-action="Details" asp-route-id="@item.productID">Details</a> |
+            <a asp-action="Delete" asp-route-id="@item.productID">Delete</a>
+    </div>
+</div>
+}
+@*<table class="table">
     <thead>
         <tr>
             <th>
@@ -56,4 +73,4 @@
         </tr>
 }
     </tbody>
-</table>
+</table>*@

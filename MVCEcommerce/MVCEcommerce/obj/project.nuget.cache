@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "ynGaPTMp6npS/trcK7kd/9MwKV8tPoToCkg4dxGcMOe68VLaTeUcSbUPF6vh5iAtSUVDsE2IoBKxCZej4JM35g==",
+  "dgSpecHash": "vgj34d9NXEQ3/C4CbnvJ81g2mZE33laWD0tOsc4uiFY4scH/AMroDo13dNjGIfHDk3hC+GaRFsZquSf6KVUJvQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\virro\\Documents\\GitHub\\Ecommerce-Sharp\\MVCEcommerce\\MVCEcommerce\\MVCEcommerce.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\virro\\.nuget\\packages\\bootstrap\\5.2.3\\bootstrap.5.2.3.nupkg.sha512",
     "C:\\Users\\virro\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\virro\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
     "C:\\Users\\virro\\.nuget\\packages\\messagepack.annotations\\2.1.152\\messagepack.annotations.2.1.152.nupkg.sha512",
