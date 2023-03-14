@@ -6,18 +6,29 @@ namespace MVCEcommerce.Controllers
 	public class DisplayController : Controller
 	{
 
-		private readonly ecommerceDBContext _context;
+        //// 
+        //// GET: /HelloWorld/
+        //public string Index()
+        //{
+        //    return "This is my default action...";
+        //}
+        //// 
+        //// GET: /HelloWorld/Welcome/ 
+        //public string Welcome(string name, int numTimes = 1)
+        //{
+        //    return HtmlEncoder.Default.Encode($"Hello {name}, NumTimes is: {numTimes}");
+        //}
 
-		public DisplayController(ecommerceDBContext context)
-		{
-			this._context = context;
-		}
+        public IActionResult Index()
+        {
+            return View();
+        }
 
-		[HttpGet]
-		public IActionResult Index()
-		{
-			var entities = _context.Product.ToList();
-			return View(entities);
-		}
-	}
+        public IActionResult Welcome(string name, int numTimes = 1)
+        {
+            ViewData["Message"] = "Hello " + name;
+            ViewData["NumTimes"] = numTimes;
+            return View();
+        }
+    }
 }

@@ -1,4 +1,11 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using MVCEcommerce.Data;
 var builder = WebApplication.CreateBuilder(args);
+
+
+builder.Services.AddDbContext<MVCEcommerceContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("MVCEcommerceContext")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
