@@ -1,4 +1,4 @@
-﻿@model IEnumerable<MVCEcommerce.Models.Product>
+﻿@model MVCEcommerce.Models.productCategoryViewModel
 
 @{
     ViewData["Title"] = "Index";
@@ -12,12 +12,16 @@
 
 <form method="get" asp-controller="Products" asp-action="Index">
     <p>
+        <select asp-for="ProductCategory" asp-items="Model.Categories">
+            <option value="">All</option>
+        </select>
+
         Title <input type="text" name="SearchString"/>
         <input type="submit" value="Filter"/>
     </p>
 
 </form>
-@foreach (var item in Model) {
+@*@foreach (var item in Model.Product!) {
 <div class="card col" style="width: 18rem;">
         <img class="card-img-top" src=@Html.DisplayFor(modelItem => item.productImage) alt="Card image cap">
     <div class="card-body">
@@ -33,30 +37,30 @@
             <a asp-action="Delete" asp-route-id="@item.productID">Delete</a>
     </div>
 </div>
-}
-@*<table class="table">
+}*@
+<table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.productName)
+                @Html.DisplayNameFor(model => model.Product![0].productName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.productCost)
+                    @Html.DisplayNameFor(model => model.Product![0].productCost)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.productDescription)
+                    @Html.DisplayNameFor(model => model.Product![0].productDescription)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.productImage)
+                    @Html.DisplayNameFor(model => model.Product![0].productImage)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.categoryID)
+                    @Html.DisplayNameFor(model => model.Product![0].category.categoryName)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+@foreach (var item in Model.Product!) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.productName)
@@ -71,8 +75,9 @@
                 @Html.DisplayFor(modelItem => item.productImage)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.categoryID)
-            </td>
+                    @Html.DisplayFor(modelItem => item.category.categoryName)
+                    
+                </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.productID">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.productID">Details</a> |
@@ -81,4 +86,4 @@
         </tr>
 }
     </tbody>
-</table>*@
+</table>

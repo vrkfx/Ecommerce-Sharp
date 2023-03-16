@@ -20,13 +20,17 @@ namespace MVCEcommerce.Controllers
         }
 
         // GET: Products
-        public async Task<IActionResult> Index(string searchString)
+        public async Task<IActionResult> Index(string searchString, string categoryName)
         {
             if(_context.Product == null)
             {
                 return NotFound();  
             }
-               
+
+            IQueryable<string> categoryQuery = from i in _context.Product
+                                            orderby i.category.categoryName
+                                            select i.category.categoryName;
+
             var products = from p in _context.Product
                            select p;
 
@@ -34,7 +38,19 @@ namespace MVCEcommerce.Controllers
             {
                 products = products.Where(s => s.productName.Contains(searchString));   
             }
-              return View(await products.ToListAsync());
+
+            if (!string.IsNullOrEmpty(categoryName))
+            {
+                products = products.Where(x => x.category.categoryName.Contains(categoryName));
+            }
+
+            var productCategoryVM = new productCategoryViewModel
+            {
+                Categories = new SelectList(await categoryQuery.Distinct().ToListAsync()),
+                Product = await products.ToListAsync()
+            };
+
+            return View(productCategoryVM);
         }
 
         // GET: Products/Details/5

@@ -20,6 +20,8 @@ namespace MVCEcommerce.Models
         [DisplayName("Description")]
         public string productDescription { get; set; }
         public string productImage { get; set; }
-        public int categoryID { get; set; }
+        public Category category { get; set; }
+        
+   
     }
 }
