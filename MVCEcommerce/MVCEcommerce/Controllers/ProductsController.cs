@@ -20,7 +20,7 @@ namespace MVCEcommerce.Controllers
         }
 
         // GET: Products
-        public async Task<IActionResult> Index(string searchString, string categoryName)
+        public async Task<IActionResult> Index(string searchString, string categorySelect )
         {
             if(_context.Product == null)
             {
@@ -39,9 +39,9 @@ namespace MVCEcommerce.Controllers
                 products = products.Where(s => s.productName.Contains(searchString));   
             }
 
-            if (!string.IsNullOrEmpty(categoryName))
+            if (!string.IsNullOrEmpty(categorySelect))
             {
-                products = products.Where(x => x.category.categoryName.Contains(categoryName));
+                products = products.Where(x => x.category.categoryName.Contains(categorySelect));
             }
 
             var productCategoryVM = new productCategoryViewModel

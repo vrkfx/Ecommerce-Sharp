@@ -12,7 +12,7 @@
 
 <form method="get" asp-controller="Products" asp-action="Index">
     <p>
-        <select asp-for="ProductCategory" asp-items="Model.Categories">
+        <select asp-for="ProductCategory" asp-items="Model.Categories" name="CategorySelect">
             <option value="">All</option>
         </select>
 
@@ -75,9 +75,9 @@
                 @Html.DisplayFor(modelItem => item.productImage)
             </td>
             <td>
-                    @Html.DisplayFor(modelItem => item.category.categoryName)
+                @Html.DisplayFor(modelItem => item.category.categoryName)
                     
-                </td>
+            </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.productID">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.productID">Details</a> |
