@@ -9,6 +9,14 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
+
+<form method="get" asp-controller="Products" asp-action="Index">
+    <p>
+        Title <input type="text" name="SearchString"/>
+        <input type="submit" value="Filter"/>
+    </p>
+
+</form>
 @foreach (var item in Model) {
 <div class="card col" style="width: 18rem;">
         <img class="card-img-top" src=@Html.DisplayFor(modelItem => item.productImage) alt="Card image cap">
