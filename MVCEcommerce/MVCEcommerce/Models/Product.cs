@@ -21,6 +21,8 @@ namespace MVCEcommerce.Models
         public string productDescription { get; set; }
         public string productImage { get; set; }
         public Category category { get; set; }
+
+      //  public string categoryName { get; set; }
         
    
     }

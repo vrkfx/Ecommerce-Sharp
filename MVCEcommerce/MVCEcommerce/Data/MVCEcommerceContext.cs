@@ -17,5 +17,6 @@ namespace MVCEcommerce.Data
         public DbSet<MVCEcommerce.Models.Product> Product { get; set; } = default!;
 
         public DbSet<MVCEcommerce.Models.Customer> Customer { get; set; }
+        public DbSet<MVCEcommerce.Models.Category> Category { get; set; }
     }
 }

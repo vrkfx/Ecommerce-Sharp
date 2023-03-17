@@ -34,6 +34,10 @@ namespace MVCEcommerce.Controllers
             var products = from p in _context.Product
                            select p;
 
+            var category = from c in _context.Category
+                           select c;
+
+
             if (!String.IsNullOrEmpty(searchString))
             {
                 products = products.Where(s => s.productName.Contains(searchString));   
@@ -47,8 +51,11 @@ namespace MVCEcommerce.Controllers
             var productCategoryVM = new productCategoryViewModel
             {
                 Categories = new SelectList(await categoryQuery.Distinct().ToListAsync()),
-                Product = await products.ToListAsync()
+                Product = await products.ToListAsync(),
+                Category = await category.ToListAsync(),
             };
+
+            
 
             return View(productCategoryVM);
         }

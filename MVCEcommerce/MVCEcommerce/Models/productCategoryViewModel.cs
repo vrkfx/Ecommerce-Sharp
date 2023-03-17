@@ -6,12 +6,13 @@ namespace MVCEcommerce.Models
     {
         public List<Product>? Product { get; set; }
 
-        public string? Category { get; set; }
+        public List<Category>? Category { get; set; }
 
         public SelectList? Categories { get; set; }
         
         public string? SearchString { get; set; }
 
         public string? ProductCategory { get; set; }
+
     }
 }
