@@ -8,11 +8,28 @@ CREATE TABLE Product (
 	categoryID int NOT NULL,
 );
 
+CREATE TABLE Users (
+	userId UNIQUEIDENTIFIER PRIMARY KEY default NEWID() NOT NULL,
+	userName varchar(80) NOT NULL,
+	password varchar(64) NOT NULL,
+);
+
+
+
+INSERT INTO Users (userId, userName, password) VALUES (default, 'admin123@gmail.com', 'Admin123')
+
+select * from Users;
+
+drop table Users
+
 CREATE TABLE Category (
 	categoryID int NOT NULL,
 	parentCategoryID int,
 	categoryName varchar(50) NOT NULL,
+	PRIMARY KEY (categoryID),
 );
+
+drop table Category
 
 CREATE TABLE Customer (
     customerID int NOT NULL,
@@ -49,7 +66,10 @@ CREATE TABLE ProductInOrder (
 	productID int NOT NULL,
 	numberOf int NOT NULL,
 	totalItemCost decimal(10,2),
+	PRIMARY KEY(orderID, productID),
 );
+
+drop table ProductInOrder;
 
 CREATE TABLE Review(
     reviewID int NOT NULL,
@@ -58,8 +78,10 @@ CREATE TABLE Review(
     productID int NOT NULL,
     rating int NOT NULL,
     reviewDescription varchar(max) NOT NULL,
+	PRIMARY KEY(reviewID),
 );
 
+drop table Review;
 
 drop table Customer, Review, ProductInOrder, Product, Address, Category , CustomerOrder
 SET IDENTITY_INSERT [Address] ON
