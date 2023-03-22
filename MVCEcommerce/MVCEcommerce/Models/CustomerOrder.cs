@@ -9,7 +9,7 @@ namespace MVCEcommerce.Models
     {
         public int orderID { get; set; }
         public int customerID { get; set; }
-        public DateOnly orderDate { get; set; }
-        public DateOnly? datePaid { get; set; }
+        public DateTime orderDate { get; set; }
+        public DateTime? datePaid { get; set; }
     }
 }

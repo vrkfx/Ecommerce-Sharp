@@ -18,5 +18,7 @@ namespace MVCEcommerce.Data
 
         public DbSet<MVCEcommerce.Models.Customer> Customer { get; set; }
         public DbSet<MVCEcommerce.Models.Category> Category { get; set; }
+
+        public DbSet<MVCEcommerce.Models.Users> Users { get; set; }
     }
 }

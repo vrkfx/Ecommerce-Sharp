@@ -9,7 +9,7 @@ namespace MVCEcommerce.Models
     {
         public int reviewID { get; set; }
         public int customerID { get; set; }
-        public DateOnly reviewDate { get; set; }
+        public DateTime reviewDate { get; set; }
         public int productID { get; set; }
         public int rating { get; set; }
         public string reviewDescription { get; set; }

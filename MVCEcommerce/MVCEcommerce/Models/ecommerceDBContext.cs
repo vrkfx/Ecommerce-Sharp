@@ -25,6 +25,7 @@ namespace MVCEcommerce.Models
         public virtual DbSet<Product> Product { get; set; }
         public virtual DbSet<ProductInOrder> ProductInOrder { get; set; }
         public virtual DbSet<Review> Review { get; set; }
+        public virtual DbSet<Users> Users { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -91,9 +92,13 @@ namespace MVCEcommerce.Models
             modelBuilder.Entity<CustomerOrder>(entity =>
             {
                 entity.HasKey(e => e.orderID)
-                    .HasName("PK__Customer__0809337D66D4C0E9");
+                    .HasName("PK__Customer__0809337D2BC773CB");
 
                 entity.Property(e => e.orderID).ValueGeneratedNever();
+
+                entity.Property(e => e.datePaid).HasColumnType("date");
+
+                entity.Property(e => e.orderDate).HasColumnType("date");
             });
 
             modelBuilder.Entity<Product>(entity =>
@@ -120,7 +125,7 @@ namespace MVCEcommerce.Models
             modelBuilder.Entity<ProductInOrder>(entity =>
             {
                 entity.HasKey(e => new { e.orderID, e.productID })
-                    .HasName("PK__ProductI__BAD83E69461E9FD5");
+                    .HasName("PK__ProductI__BAD83E69BD2F65C0");
 
                 entity.Property(e => e.totalItemCost).HasColumnType("decimal(10, 2)");
             });
@@ -129,8 +134,26 @@ namespace MVCEcommerce.Models
             {
                 entity.Property(e => e.reviewID).ValueGeneratedNever();
 
+                entity.Property(e => e.reviewDate).HasColumnType("date");
+
                 entity.Property(e => e.reviewDescription)
                     .IsRequired()
+                    .IsUnicode(false);
+            });
+
+            modelBuilder.Entity<Users>(entity =>
+            {
+                entity.HasKey(e => e.userID)
+                    .HasName("PK__Users__CB9A1CFFB55F5CF0");
+
+                entity.Property(e => e.password)
+                    .IsRequired()
+                    .HasMaxLength(64)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.userName)
+                    .IsRequired()
+                    .HasMaxLength(80)
                     .IsUnicode(false);
             });
 
